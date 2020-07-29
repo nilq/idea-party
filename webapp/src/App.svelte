@@ -1,38 +1,20 @@
 <script>
-	import Ideas from "./Ideas.svelte"
-	import AddIdea from "./AddIdea.svelte"
+	import { Router, Link, Route } from "svelte-routing";
+
+	import MainPage from "./routes/MainPage.svelte"
+
+	export let url =""
 </script>
 
-<main>
-	<section class="add-idea">
-		<AddIdea />
-	</section>
-
-
-	<section class="ideas">
-		<Ideas/>
-	</section>
-</main>
-
-
-<style>
-
-	main {
-		display: flex;
-	}
-	section {
-		flex-grow: 1;
-		flex-shrink: 1;
-		width: 50%;
-	}
-
-	@media only screen and (max-width: 960px) {
-		main {
-			display: inherit;
-		}
-
-		section {
-			width: unset;
-		}
-	}
-</style>
+<Router url="{url}">
+	<nav>
+		<!-- <Link to="/">Home</Link>
+		<Link to="hello">Hello</Link> -->
+	</nav>
+	<div>
+		<Route path="/" component="{MainPage}" />
+		<Route path="hello">
+			, world!
+		</Route>
+	</div>
+</Router>
