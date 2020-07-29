@@ -46,6 +46,7 @@
 	.root {
 		margin-top: 10%;
 		width: 90%;
+		margin-left: 5%;
 	}
 </style>
 
