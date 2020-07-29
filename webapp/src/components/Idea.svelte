@@ -2,6 +2,9 @@
     export let title
     export let pitch
     export let id
+    export let parent
+    export let votes
+    export let creation_date
 </script>
 
 <article class="root">

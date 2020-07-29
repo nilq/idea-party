@@ -2,6 +2,8 @@
 	import Ideas from "../components/Ideas.svelte"
 	import AddIdea from "../components/AddIdea.svelte"
 
+	export let location
+
 	let ideasComponent
 
 	function handleIdeaAdded() {
