@@ -21,7 +21,12 @@
 		})
 		.then((response) => {
 			response.data.forEach((idea) => {
-				res.push(idea.fields)
+				let id = idea.pk
+				let new_idea = idea.fields
+
+				new_idea.id = id
+
+				res.push(new_idea)
 			})
 		})
 		.catch((error) => {
@@ -37,9 +42,17 @@
 
 </script>
 
+<style>
+	.root {
+		margin-top: 10%;
+		width: 90%;
+	}
+</style>
 
-{#each ideas as idea}
+<div class="root">
+	{#each ideas as idea}
 
 	<Idea {...idea}/>
 
-{/each}
+	{/each}
+</div>

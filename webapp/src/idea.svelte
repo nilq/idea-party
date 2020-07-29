@@ -9,11 +9,10 @@
 </script>
 
 <article class="root" on:click={handleClick}>
-
     <span class="heading">
-        <h1>
+        <h5>
             {title}
-        </h1> 
+        </h5>
 
         <span class="id">
             {id}
@@ -27,11 +26,14 @@
 
 <style>
     article {
-        border: 1px solid lightgray;
-        box-shadow: 1px 1px 4px 1px lightblue;
-        border-radius: 8px;
+        background: #FFF;
+        box-shadow: 3px 3px 2px #DEDEDE;
+
         padding: 15px;
         margin: 10px;
+
+        margin-bottom: 15px;
+
         cursor: pointer;
         transition: 0.2s ease-in;
     }
@@ -44,10 +46,11 @@
         display: flex;
     }
 
-    h1 {
+    h5 {
         flex-grow: 1;
         margin-top: 0;
         margin-bottom: 0;
+        font-size: 18px;
     }
 
     span.id {

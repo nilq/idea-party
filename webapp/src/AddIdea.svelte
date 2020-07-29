@@ -31,12 +31,14 @@
 
 <style>
     .root {
-        width: 90%;
-        border: 1px solid lightgray;
-        box-shadow: 1px 1px 4px 1px lightblue;
-        border-radius: 8px;
-        padding: 15px;
-        margin: 10px;
+        width: 70%;
+        background-color: #FFF;
+
+        box-shadow: 5px 5px 2px #DEDEDE;
+
+        padding: 30px;
+        margin-left: 10%;
+        margin-top: 10%;
     }
 
     .content {
@@ -45,14 +47,56 @@
 
     .share-button {
         width: 100%;
+        cursor: pointer;
+        border-radius: 0px;
+    }
+
+    .input {
+        border: 2px solid #DEDEDE;
+        border-radius: 0px;
+        font-family: Fira;
+
+        width: 100%;
+    }
+
+    .huge {
+        height: 50px;
+    }
+
+    .pitch {
+        height: 150px;
+    }
+
+    h3 {
+        margin-bottom: 25px;
+    }
+
+    .label {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 7px;
+
+        color: #555;
+    }
+
+    .red {
+        color: red;
     }
 </style>
 
-<div class="root">
-    <form class="content">
-        <input type="text" placeholder="Title" bind:value="{$idea.title}"/>
-        <textarea bind:value="{$idea.pitch}"/>
-    </form>
+<div class="outer">
+    <div class="root">
+        <h3>Empty your brain</h3>
 
-    <button class="share-button" on:click={shareIdea}>Let's go</button>
+        <form class="content">
+            <h5 class="label">Name the idea <span class="red">*</span></h5>
+            <input type="text" bind:value="{$idea.title}" class="input huge"/>
+            <h5 class="label">Optional pitch</h5>
+            <textarea bind:value="{$idea.pitch}" class="input pitch"/>
+        </form>
+
+        <br>
+
+        <button class="share-button btn btn-hg btn-primary" on:click={shareIdea}>Let's go</button>
+    </div>
 </div>

@@ -35,5 +35,4 @@
 			width: unset;
 		}
 	}
-
 </style>
