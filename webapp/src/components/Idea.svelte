@@ -2,13 +2,9 @@
     export let title
     export let pitch
     export let id
-
-    function handleClick() {
-        alert("Not implemented!")
-    }
 </script>
 
-<article class="root" on:click={handleClick}>
+<article class="root">
     <span class="heading">
         <h5>
             {title}
@@ -33,13 +29,6 @@
         margin: 10px;
 
         margin-bottom: 15px;
-
-        cursor: pointer;
-        transition: 0.2s ease-in;
-    }
-
-    article:hover {
-        box-shadow: 1px 1px 4px 4px lightblue;
     }
 
     span.heading {
