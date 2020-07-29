@@ -1,30 +1,19 @@
 <script>
-	export let name;
+	import Idea from './idea.svelte';
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<Idea id="ELOE2"
+		  title="Hand-shaking machine"
+		  pitch="A mechanical arm on times square that you can shake hands with and there is another hand on Tiamen square so you can shake hands with a stranger on the other side of the globe!"/>
+	
+	
+	<Idea id="LJ3TV"
+		  title="Über but for washing clothes"
+		  pitch="I need $many million to build an app where people can have can order might wash clothes"/>
+
+
+	<Idea id="KTV75Y"
+		  title="Mint-flavoured soda"
+		  pitch="Should have a picture of a watermelon and a palm tree on the front. Comes in extra tall cans."/>
 </main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
