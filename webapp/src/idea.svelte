@@ -1,10 +1,10 @@
 <script>
-    export let title;
-    export let pitch;
-    export let id;
+    export let title
+    export let pitch
+    export let id
 
     function handleClick() {
-        alert("Not implemented!");
+        alert("Not implemented!")
     }
 </script>
 

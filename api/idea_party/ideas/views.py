@@ -32,7 +32,4 @@ def idea(request, idea_id=None):
             return HttpResponse(json.dumps(idea))
 
 def ideas(request):
-    with json.loads(request.body) as r:
-        return HttpResponse(serialize('json', Idea.objects.all()[
-            r.skip_pages * r.page_count : r.page_count * r.pages
-        ]))
+    return HttpResponse(serialize('json', Idea.objects.all()))

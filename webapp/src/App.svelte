@@ -11,26 +11,43 @@
 		crossdomain: true,
 	})
 
-	onMount(async () => {
-		api.get('http://localhost:8000/ideas/', {
+	async function getIdeas() {
+		let res = []
+
+		await api.get('http://localhost:8000/ideas/', {
 			page_count: 10,
 			pages_skip: 0,
 			pages: 1
 		})
 		.then((response) => {
 			response.data.forEach((idea) => {
-				ideas.push(idea)
+				res.push(idea.fields)
 			})
-
-			alert(JSON.stringify(ideas))
 		})
 		.catch((error) => {
 			console.log(error)
 		})
+
+		return res
+	}
+
+	onMount(async () => {
+		ideas = await getIdeas()
 	})
 
 </script>
 
 <main>
-	
+	<section class="add-idea">
+	<!-- TODO: Add-idea component -->
+	</section>
+
+
+	<section class="ideas">
+		{#each ideas as idea}
+
+			<Idea {...idea}/>
+
+		{/each}
+	</section>
 </main>
