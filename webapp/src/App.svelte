@@ -21,7 +21,12 @@
 		})
 		.then((response) => {
 			response.data.forEach((idea) => {
-				res.push(idea.fields)
+				let id = idea.pk
+				let new_idea = idea.fields
+
+				new_idea["id"] = id
+
+				res.push(new_idea)
 			})
 		})
 		.catch((error) => {
