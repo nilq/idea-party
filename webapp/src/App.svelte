@@ -39,7 +39,7 @@
 
 <main>
 	<section class="add-idea">
-	<!-- TODO: Add-idea component -->
+	TODO: Add idea component
 	</section>
 
 
@@ -51,3 +51,27 @@
 		{/each}
 	</section>
 </main>
+
+
+<style>
+
+	main {
+		display: flex;
+	}
+	section {
+		flex-grow: 1;
+		flex-shrink: 1;
+		width: 50%;
+	}
+
+	@media only screen and (max-width: 960px) {
+		main {
+			display: inherit;
+		}
+
+		section {
+			width: unset;
+		}
+	}
+
+</style>
