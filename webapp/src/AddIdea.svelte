@@ -32,7 +32,11 @@
 <style>
     .root {
         width: 90%;
-        margin-left: 5%;
+        border: 1px solid lightgray;
+        box-shadow: 1px 1px 4px 1px lightblue;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px;
     }
 
     .content {
