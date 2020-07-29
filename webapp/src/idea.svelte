@@ -10,17 +10,19 @@
 
 <article class="root" on:click={handleClick}>
 
-    <h1>
-        {title}
-    </h1> 
+    <span class="heading">
+        <h1>
+            {title}
+        </h1> 
+
+        <span class="id">
+            {id}
+        </span>
+    </span>
 
     <p>
         {pitch}
     </p>
-
-    <span class="id">
-        {id}
-    </span>
 </article>
 
 <style>
@@ -30,7 +32,6 @@
         border-radius: 8px;
         padding: 15px;
         margin: 10px;
-        position: relative;
         cursor: pointer;
         transition: 0.2s ease-in;
     }
@@ -39,12 +40,12 @@
         box-shadow: 1px 1px 4px 4px lightblue;
     }
 
-    h1 {
-        margin-top: 0;
-        margin-bottom: 0;
+    span.heading {
+        display: flex;
     }
 
-    p {
+    h1 {
+        flex-grow: 1;
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -52,12 +53,14 @@
     span.id {
         font-family: 'Courier New', Courier, monospace;
         color: gray;
-        position: absolute;
-        top: 15px;
-        right: 15px;
     }
     span.id:before {
         content: "§";
         color: red;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 </style>
