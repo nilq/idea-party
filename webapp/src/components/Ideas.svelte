@@ -50,7 +50,7 @@
 </style>
 
 <div class="root">
-	{#each ideas as idea}
+	{#each ideas as idea (idea.id)}
 
 	<Idea {...idea}/>
 
