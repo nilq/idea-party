@@ -1,5 +1,7 @@
 <script>
 	import Idea from './idea.svelte'
+	import AddIdea from './AddIdea.svelte'
+
 	import { onMount } from 'svelte'
 
 	import axios from "axios"
@@ -44,7 +46,7 @@
 
 <main>
 	<section class="add-idea">
-	TODO: Add idea component
+		<AddIdea />
 	</section>
 
 
