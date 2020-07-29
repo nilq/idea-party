@@ -1,18 +1,24 @@
 <script>
 	import Ideas from "../components/Ideas.svelte"
 	import AddIdea from "../components/AddIdea.svelte"
+
+	let ideasComponent
+
+	function handleIdeaAdded() {
+		ideasComponent.getIdeas()
+	}
 </script>
 
 
 <main>
 
 	<section class="add-idea">
-		<AddIdea />
+		<AddIdea on:ideaAdded={handleIdeaAdded} />
 	</section>
 
 
 	<section class="ideas">
-		<Ideas/>
+		<Ideas bind:this={ideasComponent}/>
 	</section>
 </main>
 
