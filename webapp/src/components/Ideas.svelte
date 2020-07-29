@@ -4,17 +4,17 @@
 
 	import axios from "axios"
 
-	let ideas = []
+	export let ideas = []
 
 	const api = axios.create({
 		timeout: 4000,
 		crossdomain: true,
 	})
 
-	async function getIdeas() {
+	export function getIdeas() {
 		let res = []
 
-		await api.get('http://localhost:8000/ideas/', {
+		api.get('http://localhost:8000/ideas/', {
 			page_count: 10,
 			pages_skip: 0,
 			pages: 1
@@ -28,16 +28,16 @@
 
 				res.push(new_idea)
 			})
+				
+			ideas = res
 		})
 		.catch((error) => {
 			console.log(error)
 		})
-
-		return res
 	}
 
-	onMount(async () => {
-		ideas = await getIdeas()
+	onMount(() => {
+		getIdeas()
 	})
 
 </script>
@@ -51,7 +51,7 @@
 </style>
 
 <div class="root">
-	{#each ideas as idea}
+	{#each ideas as idea (idea.id)}
 
 	<Idea {...idea}/>
 

@@ -1,7 +1,10 @@
 <script>
-    import { writable } from 'svelte/store';
+    import { writable } from 'svelte/store'
+	import { createEventDispatcher } from 'svelte'
 
-	import axios from "axios"
+    import axios from "axios"
+    
+    const dispatch = createEventDispatcher()
 
     const idea = writable({
         title: "",
@@ -18,12 +21,15 @@
             api.post('http://localhost:8000/ideas/idea/', {
                 ...$idea
             })
+            .then(success => {
+                dispatch('ideaAdded', { idea: $idea })
+
+                $idea.title = ""
+                $idea.pitch = ""
+            })
             .catch((error) => {
                 console.log(error)
             })
-
-            $idea.title = ""
-            $idea.pitch = ""
         }
     }
 
@@ -43,6 +49,10 @@
 
     .content {
         display: grid;
+    }
+
+    textarea {
+        resize: vertical;
     }
 
     .share-button {
