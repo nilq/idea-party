@@ -45,6 +45,10 @@
         display: grid;
     }
 
+    textarea {
+        resize: vertical;
+    }
+
     .share-button {
         width: 100%;
         cursor: pointer;
