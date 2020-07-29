@@ -6,7 +6,7 @@ class Idea(models.Model):
     title = models.CharField(max_length=100)
     pitch = models.CharField(max_length=300, default='')
 
-    creation_date = models.DateTimeField('date published', auto_now_add=True)
+    creation_date = models.DateTimeField('date published', auto_now=True)
 
     votes  = models.IntegerField(default=0)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, default=None, blank=True, null=True)
