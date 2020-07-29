@@ -1,5 +1,6 @@
 {
-  "name": "svelte-app",
+  "name": "idea-party-app",
+  "proxy": "localhost:8000",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -16,6 +17,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "sirv-cli": "^1.0.0"
   }
 }

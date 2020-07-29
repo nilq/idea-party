@@ -1,19 +1,36 @@
 <script>
-	import Idea from './idea.svelte';
+	import Idea from './idea.svelte'
+	import { onMount } from 'svelte'
+
+	import axios from "axios"
+
+	let ideas = []
+
+	const api = axios.create({
+		timeout: 4000,
+		crossdomain: true,
+	})
+
+	onMount(async () => {
+		api.get('http://localhost:8000/ideas/', {
+			page_count: 10,
+			pages_skip: 0,
+			pages: 1
+		})
+		.then((response) => {
+			response.data.forEach((idea) => {
+				ideas.push(idea)
+			})
+
+			alert(JSON.stringify(ideas))
+		})
+		.catch((error) => {
+			console.log(error)
+		})
+	})
+
 </script>
 
 <main>
-	<Idea id="ELOE2"
-		  title="Hand-shaking machine"
-		  pitch="A mechanical arm on times square that you can shake hands with and there is another hand on Tiamen square so you can shake hands with a stranger on the other side of the globe!"/>
 	
-	
-	<Idea id="LJ3TV"
-		  title="Über but for washing clothes"
-		  pitch="I need $many million to build an app where people can have can order might wash clothes"/>
-
-
-	<Idea id="KTV75Y"
-		  title="Mint-flavoured soda"
-		  pitch="Should have a picture of a watermelon and a palm tree on the front. Comes in extra tall cans."/>
 </main>
