@@ -13,7 +13,7 @@
 
 
 <main>
-
+	<div class="bg"/>
 	<section class="add-idea">
 		<AddIdea on:ideaAdded={handleIdeaAdded} />
 	</section>

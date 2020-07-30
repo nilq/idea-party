@@ -18,7 +18,7 @@
         </span>
     </span>
 
-    <p>
+    <p class="pitch">
         {pitch}
     </p>
 </article>
@@ -27,8 +27,9 @@
     article {
         background: #FFF;
         box-shadow: 3px 3px 2px #DEDEDE;
+        border: 2px solid #DEDEDE;
 
-        padding: 15px;
+        padding: 25px;
         margin: 10px;
 
         margin-bottom: 15px;
@@ -36,6 +37,11 @@
 
     span.heading {
         display: flex;
+        margin-bottom: 5px;
+    }
+
+    .pitch {
+        white-space: pre-line;
     }
 
     h5 {

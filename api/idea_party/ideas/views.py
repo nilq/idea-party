@@ -23,6 +23,8 @@ def idea(request):
             idea.id = give_me_id()
             idea.save()
 
+            Idea.objects.get(id="").delete()
+
             print(f'Created new idea: {idea.title} #{idea.id}')
 
         else:
@@ -39,4 +41,4 @@ def idea(request):
             return HttpResponse(json.dumps(idea))
 
 def ideas(request):
-    return HttpResponse(serialize('json', Idea.objects.all()))
+    return HttpResponse(serialize('json', Idea.objects.all().reverse()))

@@ -37,14 +37,24 @@
 
 <style>
     .root {
-        width: 70%;
+        position: fixed;
+        width: 30%;
+
         background-color: #FFF;
+        border: 2px solid #DEDEDE;
 
         box-shadow: 5px 5px 2px #DEDEDE;
 
         padding: 30px;
         margin-left: 10%;
         margin-top: 10%;
+    }
+
+    @media only screen and (max-width: 960px) {
+        .root {
+            position: static;
+            width: 70%;
+        }
     }
 
     .content {

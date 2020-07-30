@@ -18,9 +18,22 @@ body {
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-	background: repeating-linear-gradient(-45deg, transparent, transparent 2px, #f4f4f4 2px, #f4f4f4 4px);
-
 	font-family: Fira;
+}
+
+.bg {
+	background: repeating-linear-gradient(-45deg, transparent, transparent 5px, #f4f4f4 5px, #f4f4f4 10px);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: -1;
+	-webkit-transform: translateZ(0);
+	pointer-events: none;
 }
 
 a {

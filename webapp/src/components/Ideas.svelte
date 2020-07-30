@@ -1,5 +1,5 @@
 <script>
-	import Idea from './idea.svelte'
+	import Idea from './Idea.svelte'
 	import { onMount } from 'svelte'
 
 	import axios from "axios"
@@ -44,7 +44,7 @@
 
 <style>
 	.root {
-		margin-top: 10%;
+		margin-top: 20%;
 		width: 90%;
 		margin-left: 5%;
 	}
