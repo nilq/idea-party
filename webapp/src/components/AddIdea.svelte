@@ -18,7 +18,7 @@
 
     async function shareIdea() {
         if ($idea.title.length > 0 && $idea.pitch.length > 0) {
-            api.post('http://localhost:8000/ideas/idea/', {
+            api.post('http://0.0.0.0:8000/ideas/idea/', {
                 ...$idea
             })
             .then(success => {
@@ -110,9 +110,9 @@
 
         <form class="content">
             <h5 class="label">Name the idea <span class="red">*</span></h5>
-            <input type="text" bind:value="{$idea.title}" class="input huge"/>
-            <h5 class="label">Optional pitch</h5>
-            <textarea bind:value="{$idea.pitch}" class="input pitch"/>
+            <input type="text" bind:value="{$idea.title}" class="input huge" placeholder="The title."/>
+            <h5 class="label">Non-optional pitch <span class="red">*</span></h5>
+            <textarea bind:value="{$idea.pitch}" class="input pitch" placeholder="Maybe some details here."/>
         </form>
 
         <br>

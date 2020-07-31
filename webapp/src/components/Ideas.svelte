@@ -14,7 +14,7 @@
 	export function getIdeas() {
 		let res = []
 
-		api.get('http://localhost:8000/ideas/', {
+		api.get('http://0.0.0.0:8000/ideas/', {
 			page_count: 10,
 			pages_skip: 0,
 			pages: 1
@@ -29,7 +29,7 @@
 				res.push(new_idea)
 			})
 				
-			ideas = res
+			ideas = res.sort((a, b) => b.votes - a.votes)
 		})
 		.catch((error) => {
 			console.log(error)

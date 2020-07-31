@@ -12,6 +12,23 @@ from .helpers import give_me_id
 import json
 
 @csrf_exempt
+def vote(request):
+    data = json.loads(request.body)
+
+    if request.method == 'POST':
+        print(data)
+        idea = Idea.objects.get(id=data['id'])
+
+        if data['up']:
+            idea.votes += 1
+        else:
+            idea.votes -= 1
+
+        idea.save()
+
+        return HttpResponse("updoot machine go brrrrr")
+
+@csrf_exempt
 def idea(request):
     data = json.loads(request.body)
 
@@ -35,10 +52,9 @@ def idea(request):
         })
 
     elif request.method == 'GET':
-        if idea_id:
-            idea = Idea.objects.get(id=idea_id)
+        idea = Idea.objects.get(id=data.id)
 
-            return HttpResponse(json.dumps(idea))
+        return HttpResponse(json.dumps(idea))
 
 def ideas(request):
     return HttpResponse(serialize('json', Idea.objects.all().reverse()))
